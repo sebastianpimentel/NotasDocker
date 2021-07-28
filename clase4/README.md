@@ -9,20 +9,21 @@ despues de ejecutar el anterior comando se abra dentro de la misma consola de co
 
 **
 version: '3'
-services:
+>services:
 >>>web:
 >>>>image: dockercloud/hello-world
 >>>>>lb:
 >>>>image: dockercloud/haproxy
 >>>>links:
 >>>>>>- web
->>>>>>volumes:
+>>>>volumes:
 >>>>>>- /var/run/docker.sock:/var/run/docker.sock
 >>>>ports:
 >>>>>>- 80:80**
 
 Debemos tener encuenta los espacios y saltos de linea para 
-que no tengamos problema en la siguiente parte del proceso 
+que no tengamos problema en la siguiente parte del proceso
+para este caso te recomeindo visitar [Docker en Español](https://jsgiraldoh.io/Blog/Archivo-docker-compose) donde se encontrara el codigo con los espacio y tabulaciones correctas.
 
 Una ves instalado o ejecutado lo anterior debemos levantar servicio con el comando 
 **docker-compose up -d** para descarga la imagen y levantar el servicio 
